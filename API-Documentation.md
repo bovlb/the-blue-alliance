@@ -18,7 +18,7 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
      <tr>
           <td>URL</td>
-          <td></td>
+          <td>/api/v1/teams/show</td>
      </tr>
      <tr>
           <td>Accepts</td>
@@ -27,4 +27,9 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      <tr>
           <td>Returns</td>
           <td>key,team_number,name,nickname,website,event_keys,location</td>
+     </tr>
+     <tr>
+          <td>Example</td>
+          <td>http://www.thebluealliance.com/api/v1/teams/show?teams=frc281,frc1114</td>
+     </tr>
 </table>
