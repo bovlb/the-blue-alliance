@@ -30,6 +30,6 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
      <tr>
           <td>Example</td>
-          <td>http://www.thebluealliance.com/api/v1/teams/show?teams=frc281,frc1114</td>
+          <td><a href="http://www.thebluealliance.com/api/v1/teams/show?teams=frc281,frc1114">http://www.thebluealliance.com/api/v1/teams/show?teams=frc281,frc1114</a></td>
      </tr>
 </table>
