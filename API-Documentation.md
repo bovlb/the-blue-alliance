@@ -61,9 +61,10 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
 
 ###Events
 
+<a name="ApiEventList"></a>
 ####ApiEventList
 
-<table name="ApiEventList">
+<table>
      <tr>
           <td>Description</td>
           <td>List of events for a particular year</td>
@@ -86,9 +87,10 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
 </table>
 
+<a name="ApiEventDetails"></a>
 ####ApiEventDetails
 
-<table name="ApiEventDetails">
+<table>
      <tr>
           <td>Description</td>
           <td>Get all details for a particular event</td>
