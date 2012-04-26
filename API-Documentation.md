@@ -115,7 +115,7 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
 
 ####ApiEventsShow
 
-> Warning: ApiEventsShow is depreciated. It may not be available in future versions of the API. Please consider using [ApiEventList](#ApiEventList) and [ApiEventDetails](#ApiEventDetails) instead.
+> Warning: ApiEventsShow has been deprecated. It may not be available in future versions of the API. Please consider using [ApiEventList](#ApiEventList) and [ApiEventDetails](#ApiEventDetails) instead.
 
 <table>
      <tr>
