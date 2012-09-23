@@ -7,10 +7,12 @@ Be amazing during kickoff
 - Embed kickoff video
 - Embed chat
 - Twitter stream of #omgrobots
+-- Twitter streams of well recognized FRC mentors 
 - "Best matches from 2012"
 - Link to "submit videos" page to let people know they can
 - Link to github to let people know they can contribute
 - Embed social media "like", "follow" widgets to build audience through season
+
 
 Just After Ideas
 ----------------
