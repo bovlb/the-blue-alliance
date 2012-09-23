@@ -6,6 +6,7 @@ Be amazing during kickoff
 
 - Embed kickoff video
 - Embed chat
+- Twitter stream of #omgrobots
 - "Best matches from 2012"
 - Link to "submit videos" page to let people know they can
 - Link to github to let people know they can contribute
