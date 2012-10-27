@@ -79,7 +79,7 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
      <tr>
           <td>Returns</td>
-          <td>A list of events. Each event contains its key_name, name, short_name, and whether its an official event or not.</td>
+          <td>A list of events. Each event contains its key_name, name, short_name, whether its an official event or not, and start_date/end_date in ISO format if available.</td>
      </tr>
      <tr>
           <td>Example</td>
