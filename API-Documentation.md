@@ -143,3 +143,32 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
           <td><a href="http://www.thebluealliance.com/api/v1/events/show?events=2012ct">http://www.thebluealliance.com/api/v1/events/show?events=2012ct</a></td>
      </tr>
 </table>
+
+####ApiMatchDetails
+
+<table>
+     <tr>
+          <td>Description</td>
+          <td>Information about matches</td>
+     </tr>
+     <tr>
+          <td>URL</td>
+          <td>/api/v1/events/show</td>
+     </tr>
+     <tr>
+          <td>Accepts</td>
+          <td><em>match[es]</em>, a string of the match key. Also accepts a CSV string of keys .</td>
+     </tr>
+     <tr>
+          <td></td>
+          <td><em>events</em>, a <a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> string of event_keys</td> 
+     </tr>
+     <tr>
+          <td>Returns</td>
+          <td>key, event, competition_level, set_number, match_number, team_keys, alliances</td>
+     </tr>
+     <tr>
+          <td>Example</td>
+          <td><a href="http://www.thebluealliance.com/api/v1/match/details?match=2010cmp_f1m1">http://www.thebluealliance.com/api/v1/match/details?match=2010cmp_f1m1</a></td>
+     </tr>
+</table>
