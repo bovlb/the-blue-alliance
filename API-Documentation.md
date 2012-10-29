@@ -1,9 +1,6 @@
 #Documentation - The Blue Alliance API
 The Blue Alliance is a [FIRST Robotics](http://www.usfirst.org/) match archive website. The Blue Alliance API provides you with the same data available on The Blue Alliance website. This data includes team information, event information and match results.
 
-##API Clients
-TODO: Put info when someone writes a client
-
 ##Usage
 The API returns data in JSON format. For more information on JSON, visit [json.org](http://www.json.org/). There you will also find links to JSON libraries for many programming languages.
 
