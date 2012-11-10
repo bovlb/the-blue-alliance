@@ -21,3 +21,5 @@ Be good during build season
 - Embed game video
 - Link to game documents
 - Weekly updates with new things as game develops?
+-- Example: Highlight/emphasize latest rule changes
+- Spotlight team progress videos?
