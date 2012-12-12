@@ -23,7 +23,7 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
      <tr>
           <td>Returns</td>
-          <td>key,team_number,name,nickname,website,event_keys,location</td>
+          <td>List of teams. Each team contains its key_name, team_number, name, nickname, website, event_keys, location</td>
      </tr>
      <tr>
           <td>Example</td>
@@ -48,7 +48,7 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
      <tr>
           <td>Returns</td>
-          <td>key,team_number,name,nickname,website,event_keys,location,locality,country,region</td>
+          <td>key_name, team_number, name, nickname, website, event_keys, location, locality, country, region</td>
      </tr>
      <tr>
           <td>Example</td>
@@ -131,7 +131,7 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
      <tr>
           <td>Returns</td>
-          <td>key, event, competition_level, set_number, match_number, team_keys, alliances</td>
+          <td>key_name, event, competition_level, set_number, match_number, team_keys, alliances</td>
      </tr>
      <tr>
           <td>Example</td>
