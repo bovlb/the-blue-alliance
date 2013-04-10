@@ -12,5 +12,6 @@ Things we can do with signed in users.
 * Add offseasons, match results, etc
 
 ## Notifications
+* Upcoming match
 * Match results
 * New videos
