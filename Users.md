@@ -15,3 +15,7 @@ Things we can do with signed in users.
 * Upcoming match
 * Match results
 * New videos
+
+## Administration
+* Edit user info
+* Ban, delete
