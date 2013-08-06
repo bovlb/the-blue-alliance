@@ -17,5 +17,5 @@ Things we can do with signed in users.
 * New videos
 
 ## Administration
-* Edit user info
+* ~~Edit user info~~
 * Ban, delete
