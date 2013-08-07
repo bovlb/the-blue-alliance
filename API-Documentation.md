@@ -139,7 +139,7 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
 </table>
 
-##Depreciated
+##Deprecated
 
 ####ApiEventsShow
 
