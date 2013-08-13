@@ -4,7 +4,7 @@ Things we can do with signed in users.
 * Team affiliations
 * Favorite teams and events
 * Gameday preferences
-  * Layout, colors, etc
+  * Layout, colors
 * Customized homepage
 * Customized mobile pages
 
