@@ -2,7 +2,9 @@ Things we can do with signed in users.
 
 ## Personalization
 * Team affiliations
-* Favorite teams
+* Favorite teams and events
+* Gameday preferences
+  * Layout, colors, etc
 * Customized homepage
 * Customized mobile pages
 
@@ -18,4 +20,4 @@ Things we can do with signed in users.
 
 ## Administration
 * ~~Edit user info~~
-* Ban, delete
+* Ban
