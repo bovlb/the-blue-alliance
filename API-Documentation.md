@@ -119,7 +119,7 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
      <tr>
           <td>URL</td>
-          <td>/api/v1/events/show</td>
+          <td>/api/v1/match/show</td>
      </tr>
      <tr>
           <td>Accepts</td>
