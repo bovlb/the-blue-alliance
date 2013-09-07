@@ -119,15 +119,11 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
      <tr>
           <td>URL</td>
-          <td>/api/v1/match/show</td>
+          <td>/api/v1/match/details</td>
      </tr>
      <tr>
           <td>Accepts</td>
           <td><em>match[es]</em>, a string of the match key. Also accepts a CSV string of keys .</td>
-     </tr>
-     <tr>
-          <td></td>
-          <td><em>events</em>, a <a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> string of event_keys</td> 
      </tr>
      <tr>
           <td>Returns</td>
