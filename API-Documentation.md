@@ -94,7 +94,7 @@ The API returns data in JSON format. For more information on JSON, visit [json.o
      </tr>
      <tr>
           <td>URL</td>
-          <td>/api/v1/events/details</td>
+          <td>/api/v1/event/details</td>
      </tr>
      <tr>
           <td>Accepts</td>
