@@ -1,4 +1,4 @@
-#Documentation - The Blue Alliance API
+#Documentation - The Blue Alliance API v1 (deprecated)
 The Blue Alliance is a [FIRST Robotics](http://www.usfirst.org/) match archive website. The Blue Alliance API provides you with the same data available on The Blue Alliance website. This data includes team information, event information and match results.
 
 ## Deprecation Notice
