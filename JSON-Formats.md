@@ -8,9 +8,6 @@ List of dicts where each dict is as follows:
 **Justin TV:** `{"type": "justin", "channel": "<channel name>"}`
 * Example: `{"type": "justin", "channel": "frc604"}`
 
-**MMS:** `{"type": "mms", "channel": "<stream URL>"}`
-* Example: `{"type": "mms", "channel": "a1709.l1856953708.c18569.g.lm.akamaistream.net/D/1709/18569/v0001/reflector:53708"}`
-
 **Twitch TV:** `{"type": "twitch", "channel": "<channel name>"}`
 * Example: `{"type": "twitch", "channel": "tbacast"}`
 
