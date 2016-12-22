@@ -16,7 +16,7 @@ List of dicts where each dict is as follows:
 
 **RTMP:** `{"type": "rtmp", "channel": "<stream URL>", "file": "<file name>"}`
 * Example: `{"type": "rtmp", "channel": "s3b78u0kbtx79q.cloudfront.net/cfx/st/", "file": "mp4:bauhaus"}`
-**Important**: Don't include the `rtmp://` protocol prefix on the stream URL
+* **Important**: Don't include the `rtmp://` protocol prefix on the stream URL
 
 **HTML5 (HLS):** `{"type": "html5", "channel": "<stream URL>"}`
 * Example: `{"type": "html5", "channel": "http://solutions.brightcove.com/jwhisenant/hls/apple/bipbop/bipbopall.m3u8"}`
