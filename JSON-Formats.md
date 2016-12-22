@@ -5,9 +5,6 @@ List of dicts where each dict is as follows:
 **Livestream:** `{"type": "livestream", "channel": "<channel id #>", "file": "<event id #>"}`
 * Example: `{"type": "livestream", "channel": "3136927", "file": "1964881"}`
 
-**Justin TV:** `{"type": "justin", "channel": "<channel name>"}`
-* Example: `{"type": "justin", "channel": "frc604"}`
-
 **Twitch TV:** `{"type": "twitch", "channel": "<channel name>"}`
 * Example: `{"type": "twitch", "channel": "tbacast"}`
 
