@@ -14,6 +14,10 @@ A guide for configuring The Blue Alliance repo locally in order to streamline de
 
 If you are planning on developing using WSL, there are a few extra steps you'll need to take. This guide was not tested on WSL 1; we recommend updating to WSL version 2.
 
+## [[Firebase Setup|Firebase-Setup]]
+
+A guide for setting up an upstream Firebase project for The Blue Alliance. This step is only necessary if you need to utilize Firebase services like Authentication or Realtime Database for testing.
+
 # Developing
 
 ## [[Development Runbook|Development-Runbook]]
