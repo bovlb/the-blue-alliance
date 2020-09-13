@@ -23,7 +23,7 @@ Edit the fields specified in the file and save. If you're using the development 
 2. Under `Sign In Method`, click `Google` and toggle the `Enable` button.
 3. Click the `Save` button
 
-When navigating your local project, make sure to use the `http://localhost:8080` domain, as `localhost` is the only local domain specified in the `Authorized domains` section.
+When navigating your local project, make sure to use the `http://localhost:8080` domain, as `localhost` is the only local domain specified in the `Authorized domains` section. Otherwise, add `0.0.0.0` in the `Authorized domains` section.
 
 Other authentication providers can be setup, if necessary. Currently, The Blue Alliance only supports Google and Apple as authentication providers.
 
@@ -31,6 +31,14 @@ Other authentication providers can be setup, if necessary. Currently, The Blue A
 
 Additional steps to replicate The Blue Alliance's Firebase configuration in your own Firebase project. These steps are included for completeness and for any situational use cases, but will not be necessary for most contributors.
 
+### Configure Authorized Domains
+
+In Firebase, production domains should be included in the Develop -> Authentication -> Sign In Method -> Authorized domains section. Additionally if the Firebase API key has restricted permissions, the `{project_id}.firebaseapp.com` redirect domain must be included as a valid HTTP referrer for the API key. This can be configured in Google Cloud Platform Console when navigating to API & Services -> Credentials -> API Keys -> editing the API key in question and adding the `{project_id}.firebaseapp.com` domain under the `Website restrictions` section. If the Firebase API key is not restricted, this step is not required.
+
 ### Configure Sign In with Apple
 
 The [Firebase documentation for setting up Sign In with Apple](https://firebase.google.com/docs/auth/web/apple) should be considered the master document for these steps, as they may change. All of the code-related steps have already been done inside the codebase.
+
+### Configure Service Accounts
+
+Existing service accounts can be configured with Firebase permissions by giving them the proper roles in IAM. This is necessary when using Firebase Admin SDK APIs like Cloud Messaging or Remote Config on a server, or when granting users access to parts of the Firebase Console. The broadest role is the `Firebase Admin SDK Administrator Service Agent`, which can be helpful when debugging against a personal instance. Production service accounts should be more mindful about which roles they are given. For more details, see a complete list of [Firebase IAM Roles](https://firebase.google.com/docs/projects/iam/permissions).
