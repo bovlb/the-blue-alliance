@@ -6,6 +6,10 @@ Welcome to The Blue Alliance Wiki! Here are some helpful pages -
 
 A step-by-step guide for getting The Blue Alliance up and running locally. For new contributors, this should be your first stop.
 
+## [[WSL Setup|WSL-Guide]]
+
+If you are planning on developing using WSL, there are a few extra steps you'll need to take. This guide was not tested on WSL 1; we recommend updating to WSL version 2.
+
 ## [[Firebase Setup|Firebase-Setup]]
 
 A guide for setting up an upstream Firebase project for The Blue Alliance. This step is only necessary if you need to utilize Firebase services like Authentication or Realtime Database for testing.
@@ -13,10 +17,6 @@ A guide for setting up an upstream Firebase project for The Blue Alliance. This 
 ## [[Repo Setup|Repo-Setup]]
 
 A guide for configuring The Blue Alliance repo locally in order to streamline development. This step is optional as it is not required for working in The Blue Alliance repo, but it will be helpful for contributors that plan to do frequent work in the repo.
-
-## [[WSL Setup|WSL-Guide]]
-
-If you are planning on developing using WSL, there are a few extra steps you'll need to take. This guide was not tested on WSL 1; we recommend updating to WSL version 2.
 
 # Developing
 
