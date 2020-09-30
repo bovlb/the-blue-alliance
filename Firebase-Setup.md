@@ -27,6 +27,8 @@ When navigating your local project, make sure to use the `http://localhost:8080`
 
 Other authentication providers can be setup, if necessary. Currently, The Blue Alliance only supports Google and Apple as authentication providers.
 
+At the time of writing, the `tba_dev_config.json` doesn't support using a `GOOGLE_APPLICATION_CREDENTIALS` without using a remote datastore. This environment variable must be set in order to properly access the required APIs. [Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable](https://cloud.google.com/docs/authentication/getting-started#setting_the_environment_variable) to your [Firebase service account key](https://firebase.google.com/docs/admin/setup#initialize-sdk).
+
 ## (Optional) Additional Configuration
 
 Additional steps to replicate The Blue Alliance's Firebase configuration in your own Firebase project. These steps are included for completeness and for any situational use cases, but will not be necessary for most contributors.
