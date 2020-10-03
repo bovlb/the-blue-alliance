@@ -17,6 +17,12 @@ $ cp src/backend/web/static/javascript/tba_js/tba_keys_template.js src/backend/w
 
 Edit the fields specified in the file and save. If you're using the development container, make sure to sync this file to the container. Finally, [rebuild web resources](https://github.com/the-blue-alliance/the-blue-alliance/wiki/Development-Runbook#rebuilding-web-resources-javascript-css-etc) to compile the secrets file with the Javascript.
 
+## Setup Keys
+
+Set the [`google_application_credentials` of the `tba_config.json`/`tba_config.local.json`](https://github.com/the-blue-alliance/the-blue-alliance/wiki/Development-Runbook#configuring-the-development-environment-understanding-tba_dev_configjson) to set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable. This is necessary in order to communicate with an upstream Firebase project. You can download a [Firebase service account key](https://firebase.google.com/docs/admin/setup#initialize-sdk) for your project from the Firebase console.
+
+If you're using the development container, make sure to sync your key file to the container. A [restart or reprovision of the development container](https://github.com/the-blue-alliance/the-blue-alliance/wiki/Development-Runbook#reprovisioning-the-development-container) might be necessary in order to sync files + restart `dev_appserver.py`.
+
 ## Configure Authentication
 
 1. Navigate to the Authentication tab on the left-hand side under Develop.
@@ -26,8 +32,6 @@ Edit the fields specified in the file and save. If you're using the development 
 When navigating your local project, make sure to use the `http://localhost:8080` domain, as `localhost` is the only local domain specified in the `Authorized domains` section. Otherwise, add `0.0.0.0` in the `Authorized domains` section.
 
 Other authentication providers can be setup, if necessary. Currently, The Blue Alliance only supports Google and Apple as authentication providers.
-
-At the time of writing, the `tba_dev_config.json` doesn't support using a `GOOGLE_APPLICATION_CREDENTIALS` without using a remote datastore. This environment variable must be set in order to properly access the required APIs. [Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable](https://cloud.google.com/docs/authentication/getting-started#setting_the_environment_variable) to your [Firebase service account key](https://firebase.google.com/docs/admin/setup#initialize-sdk).
 
 ## (Optional) Additional Configuration
 
