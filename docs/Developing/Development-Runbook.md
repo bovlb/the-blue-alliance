@@ -1,3 +1,5 @@
+# Development Runbook
+
 ## Starting the Dev Environment
 
 We recommend running a local version of The Blue Alliance inside a [docker](https://www.docker.com/) container. You can use [vagrant](https://www.vagrantup.com/) to provision the entire environment.
@@ -36,18 +38,7 @@ When running locally, TBA will export a bootstrap interface at [http://localhost
 
 (TODO not implemented yet)
 
-## Setup Javascript Secrets
-
-Components in `web` (GameDay, login, etc.) make calls to Firebase and need to have Firebase keys set in order to work properly. Keys are referenced from a `tba_keys.js` file. This file is not checked in to source control, but an template of the file is. You can copy the template and add your own keys to the file.
-
-```
-$ cp src/backend/web/static/javascript/tba_js/tba_keys_template.js src/backend/web/static/javascript/tba_js/tba_keys.js
-```
-
-Edit the fields specified in the file and save. If you're using the development container, make sure to sync this file to the container. Finally, [rebuild web resources](https://github.com/the-blue-alliance/the-blue-alliance/wiki/Development-Runbook#rebuilding-web-resources-javascript-css-etc) to compile the secrets file with the Javascript.
-
 ## Rebuilding Web Resources (JavaScript, CSS, etc.)
-
 If you make changes to JavaScript or CSS files for the `web` service, you will have to recompile the files in order for the changes to show up in your browser. After syncing changes from your local environment to the development container, run the `ops/build/run_buildweb.sh.sh` script from inside the development container.
 
 ## Running Tests/Typecheck/Lint/etc.
@@ -122,22 +113,19 @@ There are a few ways to configure TBA to get data locally.
  2. Use the `remote` datastore mode and connect your locally running version to a production Google Cloud Datastore instance
  3. Configure the necessary API keys and use the standard datafeed tasks
 
-## Configuring the Development Environment (Understanding `tba_dev_config.json`)
+## Configuring the Development Environment
 
 It is possible to change the way the local instance inside the dev container runs using a local configuration file. The defaults are checked into the repo as `tba_dev_config.json` and should be sufficient for most everyday use. However, if you want to configure overrides locally, add a json file to `tba_dev_config.local.json` (which will be ignored by `git`). Note that you need to `halt` and restart the development container for changes to take effect.
 
 Available configuration keys:
  - `datastore_mode` can be either `local` or `remote`. By default this is set to `local` and will use the [datastore emulator](https://cloud.google.com/datastore/docs/tools/datastore-emulator) bundled with the App Engine SDK. If instead, you want to point your instance to a real datatsore instance, set this to `remote` and also set the `google_application_credentials` property
+  - `redis_cache_url` is a way to configure the location of a redis cache used for caching datastore responses. This defualts to `redis://localhost:6739`, which is the address of redis running inside the dev container. To disable the global cache, set this property to an empty string.
  - `google_application_credentials` is a path (relative to the repository root) to a [service account JSON key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) used to authenticate to a production Google Cloud service. We recommend to put these in `ops/dev/keys` (which will be ignored by `git`). Example: `ops/dev/keys/tba-prod-key.json`
  - `log_level`: This will be used to set the `--log-level` flag when invoking `dev_appserver`. See the [documentation](https://cloud.google.com/appengine/docs/standard/python3/tools/local-devserver-command) for allowed values.
  - `tba_log_level`: This is used to configure the minimum log level for logs emitted by the TBA application. Allowed values correspond to the possible [`logging` library levels](https://docs.python.org/2/library/logging.html#logging-levels).
 
 ## Generating Type Checker Stubs
-The `stubs/` folder contains [type hint stubs](https://www.python.org/dev/peps/pep-0484/#stub-files) for third-party dependencies that do not natively contain type hints. These type hints are necessary for [pyre](https://pyre-check.org/) (our type checker) to run successfully. 
-
-Before generating stubs, check to see if type hints are exposed for a library via it's `site-packages` directory by adding the library in question to the [pyre search paths in our .pyre_configuration](https://github.com/the-blue-alliance/the-blue-alliance/blob/py3/.pyre_configuration). This is a preferred solution to generating stubs. If the typecheck run still fails, generating stubs is an appropriate solution.
-
-In order to generate stubs for a third-party library, run [`stubgen`](https://mypy.readthedocs.io/en/stable/stubgen.html) for the third-party package. For For example, to generate stubs for the `google.cloud.ndb` library -
+The `stubs/` folder contains [type hint stubs](https://www.python.org/dev/peps/pep-0484/#stub-files) for third-party dependencies that do not natively contain type hints. These type hints are necessary for [pyre](https://pyre-check.org/) (our type checker) to run successfully. In order to generate stubs for a third-party library, run [`stubgen`](https://mypy.readthedocs.io/en/stable/stubgen.html) for the third-party package. For For example, to generate stubs for the `google.cloud.ndb` library -
 ```
 $ stubgen -p google.cloud.ndb -o stubs/
 ```
