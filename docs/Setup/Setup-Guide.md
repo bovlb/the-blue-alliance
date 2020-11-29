@@ -37,7 +37,7 @@ $ vagrant rsync-auto
 
 # ssh in to dev container in one tab
 $ vagrant ssh
-> tmxu a
+> tmux attach
 ```
 
 ## What’s Next?
