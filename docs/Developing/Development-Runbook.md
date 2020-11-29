@@ -37,9 +37,10 @@ When running locally, TBA will export a bootstrap interface at [http://localhost
 
 ## Rebuilding Web Resources (JavaScript, CSS, etc.)
 
-If you make changes to JavaScript or CSS files for the `web` service, you will have to recompile the files in order for the changes to show up in your browser. After syncing changes from your local environment to the development container, run the `ops/build/run_buildweb.sh.sh` script from inside the development container.
+If you make changes to JavaScript or CSS files for the `web` service, you will have to recompile the files in order for the changes to show up in your browser. After syncing changes from your local environment to the development container, run the `run_buildweb.sh.sh` script from inside the development container.
 
 ```
+$ ./ops/build/run_buildweb.sh.sh
 ```
 
 ## Running Tests/Typecheck/Lint/etc.
