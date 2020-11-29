@@ -11,19 +11,16 @@ Local Dependencies:
 
 You can start the container locally by running `vagrant up`. Once the setup is complete, TBA should be accessable in a web browser at `localhost:8080`.
 
-Once the container is running, you can print all the relevant logs (including the `dev_appserver` logs) on the host machine by running `./ops/dev/host.sh`.
+```
+$ vagrant up
+# http://localhost:8080
+```
 
-In order to run the typechecker, tests, lints, etc locally, you'll need to set up a [venv](https://docs.python.org/3/tutorial/venv.html). You can do so with the following commands:
+Once the container is running, you can automatically sync changes and the `dev_appserver` + Gulp logs on the host machine by running `./ops/dev/host.sh`.
 
 ```
-# Create a venv
-$ python3 -m venv ./venv
-
-# Activate it
-$ source ./venv/bin/activate
-
-# Install dependencies
-$ pip install -r requirements.txt; pip install -r src/requirements.txt
+$ ./ops/dev/host.sh
+# rsync-auto will start, logs will start streaming
 ```
 
 ## Bootstrapping Data
@@ -39,7 +36,11 @@ When running locally, TBA will export a bootstrap interface at [http://localhost
 (TODO not implemented yet)
 
 ## Rebuilding Web Resources (JavaScript, CSS, etc.)
+
 If you make changes to JavaScript or CSS files for the `web` service, you will have to recompile the files in order for the changes to show up in your browser. After syncing changes from your local environment to the development container, run the `ops/build/run_buildweb.sh.sh` script from inside the development container.
+
+```
+```
 
 ## Running Tests/Typecheck/Lint/etc.
 
@@ -82,20 +83,42 @@ $ ./ops/lint_node.sh
 $ ./ops/lint_node.sh --fix
 ```
 
+### Running Typechecker/Lint/Tests Locally (outside of container)
+
+In order to run the typechecker, tests, and lints outside of the dev container, you'll need to set up a [venv](https://docs.python.org/3/tutorial/venv.html). You can do so with the following commands:
+
+```
+# Create a venv
+$ python3 -m venv ./venv
+
+# Activate it
+$ source ./venv/bin/activate
+
+# Install dependencies
+$ pip install -r requirements.txt; pip install -r src/requirements.txt
+```
+
+The commands to run the typechecker, tests, and lints will be the same commands listed above.
+
 ## Using the local Dockerfile
 By default Vagrant will look for the pre-built Docker container upstream when provisioning a development container. To use the local `Dockerfile`, set `TBA_LOCAL_DOCKERFILE` to be `true` and start the container normally.
 
 ```
 $ TBA_LOCAL_DOCKERFILE=true vagrant up
+Bringing machine 'default' up with 'docker' provider...
+==> default: Creating and configuring docker networks...
+==> default: Building the container from a Dockerfile...
 ```
 
 ## Reprovisioning the Development Container
-If you run into issues, especially after not working with your dev instance for a while, try reprovisioning and restarting your development container.
+If you run into issues, especially after not working with your dev instance for a while, try re-provisioning and restarting your development container.
+
 ```
 $ vagrant up --provision
 ```
 
 The Vagrant container may be out of date as well. In this situation, destroy and recreate your local Vagrant image. You should also be sure you have the most up to date base container image.
+
 ```
 $ vagrant halt
 $ vagrant destroy
@@ -104,6 +127,7 @@ $ vagrant up
 ```
 
 If you have problems destroying your container via Vagrant, you can remove the container via Docker.
+
 ```
 $ docker stop tba
 $ docker rm tba
@@ -113,9 +137,11 @@ $ vagrant up
 ## Getting Data Locally
 
 There are a few ways to configure TBA to get data locally.
- 1. Bootstrap data from prod. When using the `local` datastore mode, go to `/local/bootstrap` and choose what data to import
- 2. Use the `remote` datastore mode and connect your locally running version to a production Google Cloud Datastore instance
- 3. Configure the necessary API keys and use the standard datafeed tasks
+ 1. Bootstrap data from prod. When using the `local` datastore mode, go to [`http://0.0.0.0:8080/local/bootstrap`](http://0.0.0.0:8080/local/bootstrap) and choose what data to import
+ 2. Configure the necessary API keys and use the standard datafeed tasks
+ 3. Use the `remote` datastore mode and connect your locally running version to a production Google Cloud Datastore instance
+
+The first option is the currently-recommended way of populating your local datastore. The `datafeed` tasks have yet to be migrated to the py3 branch, and the third option is not generally-applicable to contributors.
 
 ## Configuring the Development Environment
 
