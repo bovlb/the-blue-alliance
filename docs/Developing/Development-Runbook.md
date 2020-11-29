@@ -14,7 +14,7 @@ $ vagrant up
 # http://localhost:8080
 ```
 
-Once the container is running, you can automatically sync changes and the `dev_appserver` + Gulp logs on the host machine by running `./ops/dev/host.sh`.
+Once the container is running, you can automatically sync changes and the `dev_appserver` + Gulp logs on the host machine by running the `host.sh` script.
 
 ```
 $ ./ops/dev/host.sh
@@ -23,7 +23,7 @@ $ ./ops/dev/host.sh
 
 ## Bootstrapping Data
 
-There are two ways to import data into a local copy of TBA. You can either bootstrap the local db from the production site, or run the datafeeds locally to fetch data directly from FIRST.
+There are two ways to import data into a local development environment. You can either bootstrap the local db from the production site, or run the datafeeds locally to fetch data directly from FIRST.
 
 ### Bootstrapping from Prod TBA
 
@@ -53,7 +53,7 @@ $ pytest src/ --relevant
 ```
 
 ### Running Lint (Python)
-Python linting is a two-step process - running [`black`](https://black.readthedocs.io/en/stable/) and [`flake8`](https://flake8.pycqa.org/en/latest/). Run them together with the `ops/lint_py3.sh` script. Using the `--fix` flag will automatically reformat code that doesn't meet the style guide requirements.
+Python linting is a two-step process - running [`black`](https://black.readthedocs.io/en/stable/) and [`flake8`](https://flake8.pycqa.org/en/latest/). Run them together with the `lint_py3.sh` script. Using the `--fix` flag will automatically reformat code that doesn't meet the style guide requirements.
 ```
 # Check for linter errors
 $ ./ops/lint_py3.sh
@@ -139,7 +139,7 @@ It is possible to change the way the local instance inside the dev container run
 
 Available configuration keys:
  - `datastore_mode` can be either `local` or `remote`. By default this is set to `local` and will use the [datastore emulator](https://cloud.google.com/datastore/docs/tools/datastore-emulator) bundled with the App Engine SDK. If instead, you want to point your instance to a real datatsore instance, set this to `remote` and also set the `google_application_credentials` property
-  - `redis_cache_url` is a way to configure the location of a redis cache used for caching datastore responses. This defualts to `redis://localhost:6739`, which is the address of redis running inside the dev container. To disable the global cache, set this property to an empty string.
+  - `redis_cache_url` is a way to configure the location of a redis cache used for caching datastore responses. This defaults to `redis://localhost:6739`, which is the address of redis running inside the dev container. To disable the global cache, set this property to an empty string.
  - `google_application_credentials` is a path (relative to the repository root) to a [service account JSON key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) used to authenticate to a production Google Cloud service. We recommend to put these in `ops/dev/keys` (which will be ignored by `git`). Example: `ops/dev/keys/tba-prod-key.json`
  - `log_level`: This will be used to set the `--log-level` flag when invoking `dev_appserver`. See the [documentation](https://cloud.google.com/appengine/docs/standard/python3/tools/local-devserver-command) for allowed values.
  - `tba_log_level`: This is used to configure the minimum log level for logs emitted by the TBA application. Allowed values correspond to the possible [`logging` library levels](https://docs.python.org/2/library/logging.html#logging-levels).
