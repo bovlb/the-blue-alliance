@@ -1,5 +1,3 @@
-# Development Runbook
-
 ## Starting the Dev Environment
 
 We recommend running a local version of The Blue Alliance inside a [docker](https://www.docker.com/) container. You can use [vagrant](https://www.vagrantup.com/) to provision the entire environment.
