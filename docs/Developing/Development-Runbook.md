@@ -33,6 +33,16 @@ When running locally, TBA will export a bootstrap interface at [http://localhost
 
 (TODO not implemented yet)
 
+## Setup Javascript Secrets
+
+Components in `web` (GameDay, login, etc.) make calls to Firebase and need to have Firebase keys set in order to work properly. Keys are referenced from a `tba_keys.js` file. This file is not checked in to source control, but an template of the file is. You can copy the template and add your own keys to the file.
+
+```
+$ cp src/backend/web/static/javascript/tba_js/tba_keys_template.js src/backend/web/static/javascript/tba_js/tba_keys.js
+```
+
+Edit the fields specified in the file and save. If you're using the development container, make sure to sync this file to the container. Finally, [rebuild web resources](https://github.com/the-blue-alliance/the-blue-alliance/wiki/Development-Runbook#rebuilding-web-resources-javascript-css-etc) to compile the secrets file with the Javascript.
+
 ## Rebuilding Web Resources (JavaScript, CSS, etc.)
 
 If you make changes to JavaScript or CSS files for the `web` service, you will have to recompile the files in order for the changes to show up in your browser. After syncing changes from your local environment to the development container, run the `run_buildweb.sh.sh` script from inside the development container.
