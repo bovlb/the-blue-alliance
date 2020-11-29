@@ -134,15 +134,6 @@ $ docker rm tba
 $ vagrant up
 ```
 
-## Getting Data Locally
-
-There are a few ways to configure TBA to get data locally.
- 1. Bootstrap data from prod. When using the `local` datastore mode, go to [`http://0.0.0.0:8080/local/bootstrap`](http://0.0.0.0:8080/local/bootstrap) and choose what data to import
- 2. Configure the necessary API keys and use the standard datafeed tasks
- 3. Use the `remote` datastore mode and connect your locally running version to a production Google Cloud Datastore instance
-
-The first option is the currently-recommended way of populating your local datastore. The `datafeed` tasks have yet to be migrated to the py3 branch, and the third option is not generally-applicable to contributors.
-
 ## Configuring the Development Environment
 
 It is possible to change the way the local instance inside the dev container runs using a local configuration file. The defaults are checked into the repo as `tba_dev_config.json` and should be sufficient for most everyday use. However, if you want to configure overrides locally, add a json file to `tba_dev_config.local.json` (which will be ignored by `git`). Note that you need to `halt` and restart the development container for changes to take effect.
